@@ -1,0 +1,24 @@
+<!--couponsDetail.wxml-->
+<view class='main-container'>
+
+  <view class='coupons'>
+    <view class='coupons_top'>
+      <image class='coupons_back_image' src='/imgs/coupons_filp2.png'></image>
+      <view class='coupons_top_bold'>{{detailInfo.name}}</view>
+      <view class='coupons_top_small'>{{conditions}}</view>
+    </view>
+
+    <view class='coupons_bottom'>
+      <view class='coupons_bottom_yellow'>抵用券编号</view>
+      <view class='coupons_bottom_bold'>{{detailInfo.couponnum}}</view>
+    </view>
+  </view>
+
+  <view class='instruction'>
+    <view>使用规则</view>
+    <view class='instr_detail'>有效期: {{detailInfo.limitTime}}</view>
+  </view>
+
+  <view class='commitBtn' catchtap="selectCouponsEvent">使用优惠券</view>
+
+</view>

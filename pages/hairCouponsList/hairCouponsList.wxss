@@ -1,0 +1,122 @@
+/* pages/hairCouponsList/hairCouponsList.wxss */
+
+html, page, .main-container {
+  height: 100%;
+}
+
+.couponsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line {
+  height: 30rpx;
+}
+
+.couponsItem {
+  width: 90%;
+  background-image: url(https://htl.mlww.info/images/f/1816);
+  border: 2rpx solid #9a9a9a;
+  padding-top: 20rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-bottom: 10rpx;
+}
+
+.itemFirstPart {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.couponsName {
+  font-size: 50rpx;
+}
+
+.itemSecondPart {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.couponsValue {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.couponsValueRed {
+  color: red;
+  font-size: 40rpx;
+  margin-right: 10rpx;
+}
+
+.couponsCount {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.couponsCountRed {
+  color: red;
+  font-size: 35rpx;
+  margin-right: 10rpx;
+}
+
+.itemFandSPart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.itemThirdPart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.limitTime {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.limitTimeText {
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.grant {
+  margin-left: 20rpx;
+  height: 60rpx;
+  width: 180rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #bf9e4d;
+  border: 1rpx solid #bf9e4d;
+  border-radius: 8rpx;
+  font-size: 36rpx;
+}
+
+.nocouponsItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-image: url(https://htl.mlww.info/images/f/1816);
+  border-bottom: 1rpx solid #9a9a9a; 
+  padding-top: 50rpx;
+  padding-bottom: 50rpx;
+}

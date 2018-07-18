@@ -1,0 +1,55 @@
+<!--pages/evaluate/evaluate.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" catchtap="swichNav">1分</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" catchtap="swichNav">2分</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" catchtap="swichNav">3分</view>
+  <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" catchtap="swichNav">4分</view>
+  <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" catchtap="swichNav">5分</view>
+</view>
+
+<view class='line'></view>
+
+<view>
+  <view class='evaluate-title'>
+    <view class='evaluate-title-left'>评价({{totalCount}})</view>
+    <view class='evaluate-Satisfaction'>
+      <image src='/imgs/satisfaction_big.png'></image>
+      <text>满意度{{markAs}}%</text>
+    </view>
+  </view>
+
+  <view wx:for="{{evaList}}">
+    <view class='insertline'></view>
+    <view>
+      <view class="evaluate-content">
+        <view class="evaluate-content-info">
+          <view class="avatar">
+            <image src="{{item.imagePath}}"></image>
+          </view>
+          <view class="evaluate-base-info">
+            <view class="evaluate-base-info-top">
+              <view class="evaluate-name">{{item.creatorNickName}}</view>
+            </view>
+            <view class="evaluate-base-info-bottom">
+              {{item.newphone}}
+            </view>
+          </view>
+        </view>
+        <view class="start_level">
+          <image src='{{item.markImage0}}'></image>
+          <image src='{{item.markImage1}}'></image>
+          <image src='{{item.markImage2}}'></image>
+          <image src='{{item.markImage3}}'></image>
+          <image src='{{item.markImage4}}'></image>
+          <text>{{item.mark}}分</text>
+        </view>
+      </view>
+      <view class='evaluate-text'>{{item.comment}}</view>
+    </view>
+
+  </view>
+  <view wx:if='{{evaList.length==0}}' class='nodata'>暂无数据</view>
+
+
+
+</view>

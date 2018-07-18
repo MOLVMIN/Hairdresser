@@ -1,0 +1,18 @@
+<!--couponsList.wxml-->
+<view class="main-container">
+  <view class="coupons-list" wx:for="{{couponsList}}">
+    <view class="coupons-item">
+      <view class="coupons-left">
+        <image src='{{item.couponsLeftImage}}'></image>
+      </view>
+      <view class="coupons-center">
+        <view class="coupons-type">{{item.name}}</view>
+        <view class="coupons-content">{{item.conditions}}</view>
+        <view class="coupons-time">{{item.couponsTime}}</view>
+      </view>
+      <view class="{{item.couponsRightClass}}" data-id='{{item.id}}' data-conditions='{{item.conditions}}' catchtap="{{item.bindtapEvent}}">
+        <text>{{item.couponsRightText}}</text>
+      </view>
+    </view>
+  </view>
+</view>

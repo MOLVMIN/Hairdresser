@@ -1,0 +1,46 @@
+<!--pages/hairCouponsList/hairCouponsList.wxml-->
+
+<view class='main-container'>
+  <view wx:if="{{activityList.length > 0}}">
+
+    <view class='couponsList' wx:for="{{activityList}}">
+
+      <view class='line'></view>
+      <view class='couponsItem' catchtap='grant' data-id='{{item.id}}' data-count='{{item.remainder}}'>
+        <view class='itemFandSPart'>
+          <view class='itemFirstPart'>
+            <view class='couponsName'>{{item.name}}</view>
+            <view>适用项目：{{item.itemlist}}</view>
+          </view>
+          <view class='itemSecondPart'>
+            <view class='couponsValue'>
+              <view>抵用金额：</view>
+              <view class='couponsValueRed'>{{item.price}}</view>
+              <view>元</view>
+            </view>
+            <view class='couponsCount'>
+              <view>剩余数量：</view>
+              <view class='couponsCountRed'>{{item.remainder}}</view>
+              <view>张</view>
+            </view>
+          </view>
+        </view>
+        <view class='itemThirdPart'>
+          <view class='limitTime'>
+            <view class='limitTimeText'>开始时间：{{item.startline}}</view>
+            <view class='limitTimeText'>截止时间：{{item.deadline}}</view>
+          </view>
+          <view class='grant'>发放</view>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+  <view wx:else>
+    <view class='nocouponsItem'>
+      暂无优惠券可用
+    </view>
+  </view>
+
+</view>

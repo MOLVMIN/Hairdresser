@@ -1,0 +1,75 @@
+/* couponsDetail.wxss */
+
+html, page, .main-container {
+  height: 100%;
+  background: #e9e9e9;
+}
+
+.coupons {
+  margin: 0rpx 30rpx;
+  background-color: #fff;
+  align-items: center;
+}
+
+.coupons_top {
+  height: 300rpx;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.coupons_back_image {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.coupons_top_bold {
+  font-weight: bold;
+  z-index: 2;
+}
+
+.coupons_top_small {
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  z-index: 2;
+}
+
+.coupons_bottom {
+  height: 300rpx;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.coupons_bottom_yellow {
+  color: #d9ba6a;
+}
+
+.coupons_bottom_bold {
+  font-weight: bold;
+  margin-top: 20rpx;
+}
+
+.instruction {
+  margin: 30rpx 50rpx;
+}
+
+.instr_detail {
+  font-size: 30rpx;
+}
+
+.commitBtn {
+  background-color: #d9ba6a;
+  position: absolute;
+  bottom: 0;
+  height: 150rpx;
+  width: 100%;
+  line-height: 150rpx;
+  text-align: center;
+  font-weight: bold;
+}

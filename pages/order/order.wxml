@@ -1,0 +1,34 @@
+<!--pages/order/order.wxml-->
+
+<import src="/pages/order_ongoing/order_ongoing.wxml" />
+<import src="/pages/order_complete/order_complete.wxml" />
+
+<view class='main-tab-bgk'>
+  <view class="main-tab-container">
+    <view class="main-tab">
+      <view catchtap="tabEvent" data-tab="left" class="{{currentTab == 'left' ? 'tab-left-selected':'tab-left'}}">预约情况</view>
+      <view catchtap="tabEvent" data-tab="right" class="{{currentTab == 'right' ? 'tab-right-selected':'tab-right'}}">完成订单</view>
+    </view>
+  </view>
+</view>
+<view class="main-container">
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">核销码</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入核销码"></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>
+
+  <template is="{{currentTab == 'left' ? 'order_ongoing' : 'order_complete'}}" data="{{ongoingList: ongoingList, completeList: completeList}}"></template>
+  <view wx:if="{{(currentTab =='left' && ongoingList == 0) || (currentTab =='right' && completeList == 0)}}" class='nodata'>暂无数据</view>
+</view>
+
+

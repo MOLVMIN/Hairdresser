@@ -1,0 +1,46 @@
+<!--pages/upload_sample/upload_sample.wxml-->
+<view class='main-container'>
+
+  <view class='line'></view>
+
+  <view class='info'>
+
+    <view class='flex_row row_item'>
+      <view class='item_bold'>作品名称</view>
+      <input class='flex_row input' placeholder-class="input-holder" type="text" maxlength="100" bindinput="workNameInputChange" placeholder="请输入作品名">
+      </input>
+    </view>
+
+    <view class='flex_row row_item'>
+      <view class='item_bold'>作品类型</view>
+      <view class='flex_row'>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{itemType}}">
+          <view name='orderProj' class="picker item_gray">
+            {{itemType[index]}}
+          </view>
+        </picker>
+        <image src='/imgs/more.png' class='more_img'></image>
+      </view>
+    </view>
+
+    <view class='flex_row row_item'>
+      <view class='item_bold'>作品介绍</view>
+      <input class='flex_row input' placeholder-class="input-holder" type="text" maxlength="100" bindinput="workContentInputChange" placeholder="请输入作品介绍">
+      </input>
+    </view>
+
+  </view>
+
+  
+
+  <view wx:if="{{tempImageFile == ''}}" class='upload'>
+    <image catchtap="chooseImage" mode='widthFix' src='/imgs/upload.png'></image>
+  </view>
+  <view wx:else class='upload'>
+    <!-- <canvas catchtap="chooseImage" canvas-id="myCanvas" style='width:{{canvasWidth}}px;height:{{canvasHeight}}px'></canvas> -->
+    <image mode='widthFix' src='{{tempImageFile}}' catchtap="chooseImage"></image>
+  </view>
+
+</view>
+
+<view class='commitBtn' catchtap='commitOrderEvent'>提交作品</view>

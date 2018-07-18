@@ -1,0 +1,25 @@
+<!--pages/fansList/fansList.wxml-->
+<view class='main-container'>
+
+<checkbox-group bindchange="allChange">
+  <view class='allset'>
+    <checkbox value="all" class='allCheck'>全选</checkbox>
+    <view class='grant' catchtap='grant'>发放</view>
+  </view>
+    </checkbox-group>
+
+  <checkbox-group bindchange="checkboxChange">
+    <label class="checkbox checkList" wx:for="{{fansList}}">
+
+      <!-- <view class='line'></view> -->
+
+      <view class='checkItem'>
+        <checkbox class='checkb' value="{{item.id}}" checked="{{item.checked}}" />
+        <image wx:if="{{item.imageId}}" class='avatar' src='{{item.imagePath}}'></image> 
+        <view class='nickname'>{{item.nickname}}</view>
+      </view>
+
+    </label>
+  </checkbox-group>
+
+</view>

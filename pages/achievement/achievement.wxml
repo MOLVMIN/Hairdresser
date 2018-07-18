@@ -1,0 +1,12 @@
+<!--pages/achievement/achievement.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" catchtap="swichNav">按年</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" catchtap="swichNav">按月</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" catchtap="swichNav">按日</view>
+</view>
+
+<view class='line'></view>
+
+<view>
+  <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas charts" bindtouchstart="touchHandler"></canvas>
+</view>

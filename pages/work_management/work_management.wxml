@@ -1,0 +1,33 @@
+<!--pages/work_management/work_management.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" catchtap="swichNav">全部</view>
+  <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" catchtap="swichNav">剪发</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" catchtap="swichNav">烫发</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" catchtap="swichNav">染发</view>
+  <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" catchtap="swichNav">造型</view>
+</view>
+
+<view class='line'></view>
+
+<view class='main-context' wx:for="{{workList}}">
+  <view class='list'>
+    <view class='work-info'>
+      <view class='work-author'>
+        <image src='{{hairImage}}' class='avatar'></image>
+      </view>
+      <view class='work-show'>
+        <view class='work-show-name'>{{hairName}}</view>
+        <image src='{{item.imagePath}}' mode='aspectFit' class='work-pic' catchtap='previewImageEvent' data-src="{{item.imagePath}}"></image>
+        <view class='work-show-time'>{{item.createdate}}</view>
+      </view>
+    </view>
+    <view class='work-btn'>
+      <view class='delete' data-id="{{item.id}}" catchtap="deleteWorkEvent">删除</view>
+    </view>
+  </view>
+  <view class='insertline'></view>
+</view>
+
+<view wx:if='{{workList.length == 0}}' class='nodata'>暂无数据</view>
+
+<view class='uploadBtn' catchtap='uploadTapEvent'>上传作品</view>

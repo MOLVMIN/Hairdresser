@@ -1,0 +1,80 @@
+/* couponsList.wxss */
+
+html, page, .main-container {
+  height: 100%;
+  background: #e9e9e9;
+}
+
+.main-container {
+}
+
+.coupons-item {
+  background: #fff;
+  display: flex;
+  margin: 20rpx 10rpx;
+  position: relative;
+}
+
+.coupons-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx;
+}
+
+.coupons-left image {
+  width: 100rpx;
+  height: 69rpx;
+}
+
+.coupons-type {
+  font-size: 30rpx;
+  font-weight: 700;
+  margin: 20rpx 0 10rpx 0;
+}
+
+.coupons-content {
+  font-size: 26rpx;
+  color: #a7a7a7;
+  margin: 10rpx 0;
+}
+
+.coupons-time {
+  font-size: 26rpx;
+  color: #a7a7a7;
+  margin: 10rpx 0 20rpx 0;
+}
+
+.coupons-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d9ba6a;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 150rpx;
+}
+
+.coupons-right-gray {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #a1a1a1;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 150rpx;
+}
+
+.coupons-right text, .coupons-right-gray text {
+  font-size: 30rpx;
+  color: #fff;
+  font-weight: 600;
+}
+
+.coupons-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

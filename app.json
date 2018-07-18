@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/evaluate/evaluate",
+    "pages/upload_sample/upload_sample",
+    "pages/achievement/achievement",
+    "pages/coupons/coupons",
+    "pages/order_complete/order_complete",
+    "pages/order_ongoing/order_ongoing",
+    "pages/work_management/work_management",
+    "pages/order/order",
+    "pages/charts/line/line",
+    "pages/couponsList/couponsList",
+    "pages/couponsDetail/couponsDetail",
+    "pages/hairCouponsList/hairCouponsList",
+    "pages/fansList/fansList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "胡头理连锁",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  }
+}

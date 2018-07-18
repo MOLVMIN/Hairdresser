@@ -1,0 +1,91 @@
+<!--pages/home/home.wxml-->
+
+<view class="main-container">
+  <view>{{errmess}}</view>
+
+  <view class="base-container">
+    <view class="user-info">
+      <image class='user-info-image' src="{{userInfo.avatarUrl}}"></image>
+      <view class='user-info-text'>{{userInfo.nickName}}</view>
+      <view class='fans'>
+        <view class='fans_left'>粉丝数 {{hairInfo.fansCount}}</view>
+        <view class='fans_right' wx:if="{{hairInfo.cmake}}">满意度 {{hairInfo.cmake}}</view>
+        <view class='fans_right' elif>满意度 0</view>
+      </view>
+    </view>
+  </view>
+  <view class="order-container">
+    <view class="order-menu">
+      <view class="menu-item" data-type='left' catchtap='orderTapEvent'>
+        <image src="/imgs/appointment.png"></image>
+        <text>预约情况</text>
+      </view>
+      <view class="menu-item" data-type='right' catchtap='orderTapEvent'>
+        <image src="/imgs/in_service.png"></image>
+        <text>全部订单</text>
+      </view>
+      <view class="menu-item" catchtap='evaluateTapEvent'>
+        <image src="/imgs/complete.png"></image>
+        <text>我的评价</text>
+      </view>
+      <view class="menu-item" catchtap='achieveTapEvent'>
+        <image src="/imgs/evaluate.png"></image>
+        <text>业绩情况</text>
+      </view>
+    </view>
+
+    <view class="line"></view>
+
+    <!-- <view class="my-voucher" catchtap='couponsTapEvent'>
+      <view class="voucher-container">
+        <view class="voucher-title">赠送优惠券</view>
+      </view>
+      <view class="more">
+        <image src="/imgs/more.png"></image>
+      </view>
+    </view> -->
+
+    <view class="my-voucher">
+      <view class="voucher-container">
+        <view class="voucher-title">签到</view>
+      </view>
+      <view class='cantSign' wx:if="{{hairInfo == null}}">非发型师不能签到</view>
+      <view class='sign' wx:if="{{hairInfo.isSign != null && hairInfo.isSign == false}}" catchtap='sign'>签到</view>
+      <view class='signed' wx:elif="{{hairInfo.isSign != null && hairInfo.isSign == true}}" catchtap='signed'>已签到</view>
+    </view>
+
+    <view class="line"></view>
+
+        <view class="my-voucher">
+      <view class="voucher-container">
+        <view class="voucher-title">我的发型师券</view>
+      </view>
+      <view class='sign' catchtap='hairCoupons'>查看</view>
+    </view>
+
+    <view class="line"></view>
+
+    <view class='works'>
+      <view class='works_info'>
+        <view class='works_title'>个人作品</view>
+        <view class='works_more' catchtap='workTapEvent'>
+          <view>管理作品</view>
+          <image src='/imgs/more.png'></image>
+        </view>
+      </view>
+      <view class='insertline'></view>
+      <scroll-view scroll-x="true" class='works_show'>
+        <block wx:for="{{workImageList}}">
+          <image mode='aspectFit' catchtap='preImages' data-src="{{item}}" src='{{item}}'></image>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">请授权获取用户信息</view>
+  <button class="btn-confirm" open-type="getUserInfo" bindgetuserinfo="getWxInfo">授权</button> 
+</view>

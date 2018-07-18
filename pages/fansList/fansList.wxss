@@ -1,0 +1,71 @@
+/* pages/fansList/fansList.wxss */
+
+html, page, .main-container {
+  height: 100%;
+}
+
+.allset {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content:space-between;
+  margin-top: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.allCheck {
+  margin-left: 30rpx;
+}
+
+.grant {
+  margin-left: 20rpx;
+  height: 60rpx;
+  width: 180rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #bf9e4d;
+  border: 1rpx solid #bf9e4d;
+  border-radius: 8rpx;
+  font-size: 36rpx;
+  margin-right: 10rpx;
+}
+
+.line {
+  height: 30rpx;
+}
+
+.checkList {
+   display: flex;
+  flex-direction: column;
+}
+
+.checkItem {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content:flex-start;
+  border-bottom: 2rpx solid #9a9a9a;
+  height: 100rpx;
+}
+
+.checkb {
+  margin-left: 30rpx;
+}
+
+.avatar {
+  width: 75rpx;
+  height: 75rpx;
+  margin-left: 10rpx;
+}
+
+.nickname {
+  font-size: 35rpx;
+  margin-left: 20rpx;
+}
+
+checkbox .wx-checkbox-input{
+   width: 30rpx;
+   height: 30rpx;
+}

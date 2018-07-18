@@ -1,0 +1,100 @@
+<!--pages/order_complete/order_complete.wxml-->
+<template name="order_complete">
+
+  <view wx:for="{{completeList}}">
+    <view class="line"></view>
+    <view>
+      <view class='list-item-container'>
+        <view>订单号</view>
+        <view>{{item.ordernum}}</view>
+      </view>
+
+      <view class="list-item-container">
+        <view>客户名称</view>
+        <view class='master'>
+          <image src="{{item.imagePath}}"></image>
+          <text>{{item.nickname}}</text>
+        </view>
+      </view>
+
+      <view class='list-item-container'>
+        <view>预约门店</view>
+        <view>{{item.shopName}}</view>
+      </view>
+
+
+      <view class='list-item-container'>
+        <view>预约电话</view>
+        <view>{{item.newphone}}</view>
+      </view>
+
+
+      <view class='list-item-container'>
+        <view>预约项目</view>
+        <view>{{item.itemlist}}</view>
+      </view>
+
+      <view class='list-item-container'>
+        <view>预约时间</view>
+        <view>{{item.createdate}}</view>
+      </view>
+
+
+      <view class='list-item-container'>
+        <view>到店时间</view>
+        <view>{{item.mkTime}}</view>
+      </view>
+
+      <!-- <view class='list-item-container'>
+      <view>服务时间</view>
+      <view>{{item.serviceDT}}</view>
+    </view>
+
+    <view class='list-item-container'>
+      <view>付款时间</view>
+      <view>{{item.payDT}}</view>
+    </view> -->
+
+      <!-- <view class="smallestLine"></view> -->
+
+      <view class='complete-item-container'>
+        <view>消费原价</view>
+        <view>¥{{item.priceValue}}</view>
+      </view>
+
+      <view wx:if="{{item.couponValue}}" class='complete-item-container'>
+        <view>优惠券</view>
+        <view style='color:#f17728'>{{item.couponnum}}</view> 
+        <view>¥{{item.couponValue}}</view> 
+      </view>
+      <view wx:else class='complete-item-container'>
+        <view>优惠券</view>
+        <view>未使用优惠券</view> 
+      </view>
+
+      <view class='subtotal-container'>
+        <view class='balance-left'>小计</view>
+        <view class='balance-right'>
+          <!-- <view class='balance-text'>¥{{item.payValue}}</view> -->
+          <view wx:if="{{item.couponValue}}" class='balance-text'>¥{{item.priceValue - item.couponValue}}</view>
+          <view wx:else class='balance-text'>¥{{item.priceValue}}</view>
+        </view>
+      </view>
+
+      <!-- <view class="smallestLine"></view>
+
+    <view class='comlete-select-container'>
+      <view></view>
+      <view class='balance-right'>
+        <view class="cancle-btn" data-id="{{item.id}}" catchtap="deleteOrderEvent">删除</view>
+      </view>
+    </view> -->
+
+    </view>
+
+    <view class='itemSpaceLine'></view>
+
+  </view>
+
+
+</template>

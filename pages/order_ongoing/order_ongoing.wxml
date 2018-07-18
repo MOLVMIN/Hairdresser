@@ -1,0 +1,24 @@
+<!--pages/order_ongoing/order_ongoing.wxml-->
+
+<template name="order_ongoing">
+  <view class='list' wx:for="{{ongoingList}}">
+    <view class='list-item'>
+      <view class='number'>{{item.ordernum}}号</view>
+      <view class="item-content">
+        <view class="left-content">
+          <image class='photo' src='{{item.imagePath}}'></image>
+          <view class='customer'>
+            <view class='customer_name'>{{item.nickname}}</view>
+            <view>预约电话 {{item.newphone}}</view>
+            <view>预约项目 {{item.itemlist}}</view>
+            <view>到店时间 {{item.mkTime}}</view>
+          </view>
+        </view>
+         <view class='service' data-id="{{item.id}}" catchtap="showDialogBtn">核销</view>     
+      </view>
+    </view>
+  </view>
+
+
+
+</template>
